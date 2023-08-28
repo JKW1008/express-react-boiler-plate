@@ -34,7 +34,12 @@
 
 # NPM Install
 
-react-query
-tailwindcss
-react-hook-form
-react-router-dom
+# react-query
+
+- npm i react-query
+
+# tailwindcss
+
+# react-hook-form
+
+# react-router-dom
