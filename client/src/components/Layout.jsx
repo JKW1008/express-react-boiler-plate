@@ -30,6 +30,7 @@ export default function Layout({
         {isFooter && (
           <div
             className="
+            z-10 bg-gray-50
           absolute bottom-0 
           w-full h-[100px] 
           grid grid-cols-5 
