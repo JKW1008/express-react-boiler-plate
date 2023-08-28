@@ -12,10 +12,10 @@ export default function Layout({
 }) {
   return (
     <div className="w-full min-h-screen flex justify-center">
-      <div className=" relative max-w-sm w-full bg-gray-100">
+      <div className="relative max-w-sm w-full bg-gray-100">
         {/* 헤더 */}
         {isHeader && (
-          <div className="w-full h-20 border-b border-neutral-300/50 grid grid-cols-3 items-center">
+          <div className="z-10 bg-white absolute inset-0 w-full h-20 border-b border-neutral-300/50 grid grid-cols-3 items-center">
             {/* 1 */}
             <div className="text-gray-400">{canGoback && <GoBack />}</div>
             {/* 2 */}
