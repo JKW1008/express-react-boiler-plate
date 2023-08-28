@@ -1,7 +1,21 @@
+import { useEffect } from "react";
 import LogoAsset from "../asset/LogoAsset";
 import Layout from "../components/Layout";
+import { useNavigate } from "react-router-dom";
 
 export default function Splash() {
+  const navigate = useNavigate();
+  const timeout = () => {
+    setTimeout(() => {
+      navigate("/home");
+    }, 3000);
+  };
+  useEffect(() => {
+    timeout();
+    return () => {
+      clearTimeout(timeout);
+    };
+  });
   return (
     <Layout>
       <div

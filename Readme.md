@@ -43,3 +43,11 @@
 # react-hook-form
 
 # react-router-dom
+
+# React Responsive Carousel
+
+- npm i react-responsive-carousel
+
+# react-multi-carousel 👋
+
+- npm i react-multi-carousel
