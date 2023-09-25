@@ -51,3 +51,19 @@
 # react-multi-carousel 👋
 
 - npm i react-multi-carousel
+
+# @material-tailwind/react
+
+- npm i @material-tailwind/react
+
+# react-hook-form
+
+- npm install react-hook-form
+
+# mongoose
+
+- npm i mongoose
+
+# bcrypt
+
+- npm i bcrypt

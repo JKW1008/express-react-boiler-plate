@@ -7,6 +7,8 @@ import Qr from "./app/Qr";
 import Fav from "./app/Fav";
 import Menu from "./app/Menu";
 import TourDetail from "./app/TourDetail";
+import SignUp from "./app/SignUp";
+import SignIn from "./app/SignIn";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
       {
         path: "tour/:id",
         element: <TourDetail />,
+      },
+      {
+        path: "signup",
+        element: <SignUp />,
+      },
+      {
+        path: "signin",
+        element: <SignIn />,
       },
     ],
   },
