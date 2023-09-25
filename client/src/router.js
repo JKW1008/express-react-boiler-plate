@@ -9,6 +9,8 @@ import Menu from "./app/Menu";
 import TourDetail from "./app/TourDetail";
 import SignUp from "./app/SignUp";
 import SignIn from "./app/SignIn";
+import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedUser from "./components/ProtectedUser";
 
 const router = createBrowserRouter([
   {
@@ -30,11 +32,19 @@ const router = createBrowserRouter([
       },
       {
         path: "qr",
-        element: <Qr />,
+        element: (
+          <ProtectedRoute>
+            <Qr />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "fav",
-        element: <Fav />,
+        element: (
+          <ProtectedRoute>
+            <Fav />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "menu",
@@ -46,11 +56,19 @@ const router = createBrowserRouter([
       },
       {
         path: "signup",
-        element: <SignUp />,
+        element: (
+          <ProtectedUser>
+            <SignUp />
+          </ProtectedUser>
+        ),
       },
       {
         path: "signin",
-        element: <SignIn />,
+        element: (
+          <ProtectedUser>
+            <SignIn />
+          </ProtectedUser>
+        ),
       },
     ],
   },

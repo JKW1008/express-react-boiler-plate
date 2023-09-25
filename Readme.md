@@ -67,3 +67,7 @@
 # bcrypt
 
 - npm i bcrypt
+
+# JSON Web Token for node.js(jwt)
+
+- npm i jsonwebtoken

@@ -2,6 +2,7 @@ import { menuItems } from "../lib/menuitems";
 import GoBack from "../asset/GoBack";
 import LogoAsset from "../asset/LogoAsset";
 import { Link } from "react-router-dom";
+import useUser from "../hooks/useUser";
 
 export default function Layout({
   children,
@@ -10,6 +11,8 @@ export default function Layout({
   title,
   isFooter,
 }) {
+  const { user } = useUser();
+  console.log(user);
   return (
     <div className="w-full min-h-screen flex justify-center">
       <div className="relative max-w-sm w-full bg-gray-100">

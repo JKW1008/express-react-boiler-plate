@@ -1,8 +1,21 @@
 import { Button, Checkbox, Input } from "@material-tailwind/react";
 import Layout from "../components/Layout";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { useMutation } from "react-query";
+import { userLogin } from "../api";
 
 export default function SignIn() {
+  const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
+  const { mutate, data } = useMutation(userLogin);
+  const onSubmit = (data) => {
+    mutate(data);
+    // console.log(data);
+  };
+  if (data?.ok === true) {
+    navigate("/home");
+  }
   return (
     <Layout isHeader>
       <div
@@ -10,7 +23,7 @@ export default function SignIn() {
      flex-col justify-center items-center px-8 space-y-8"
       >
         {/* 회원가입 폼 */}
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col space-y-8">
             {/* 제목 */}
             <div>
@@ -24,6 +37,7 @@ export default function SignIn() {
               {/* 아이디 */}
               <div className="">
                 <Input
+                  {...register("username")}
                   type="text"
                   label="아이디"
                   className="pr-20 focus:ring-0"
@@ -34,6 +48,7 @@ export default function SignIn() {
               {/* 패스워드 */}
               <div>
                 <Input
+                  {...register("password")}
                   type="text"
                   label="패스워드"
                   className="pr-20 focus:ring-0"

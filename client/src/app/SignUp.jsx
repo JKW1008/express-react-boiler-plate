@@ -1,6 +1,6 @@
 import { Button, Checkbox, Input } from "@material-tailwind/react";
 import Layout from "../components/Layout";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useMutation } from "react-query";
@@ -10,13 +10,16 @@ export default function SignUp() {
   const [passwordShown, setPasswordShown] = useState(false);
   const { handleSubmit, register } = useForm({ mode: "onChange" });
   const { mutate, data } = useMutation(userRegister);
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     // console.log(data);
     mutate(data);
   };
 
-  console.log(data);
+  if (data?.ok === true) {
+    navigate("/signin");
+  }
 
   return (
     <Layout isHeader>
