@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema({
   name: { type: String },
   auth: { type: Number },
   avatarUrl: { type: String },
+  missionCompleted: [{type: String}], 
   createdAt: Date,
   updateAt: Date,
 });
